@@ -959,8 +959,8 @@
       
       
       for (let i = 2; i < x.length; i += 2) {
-          ctx.lineTo(x[i] * 1000, x[i + 1] * 1000);
-       ctx.stroke(); 
+          setTimeout(function(x){ ctx.lineTo(x[i] * 1000, x[i + 1] * 1000);
+       ctx.stroke(); }.bind(this, x), 100)
       }
       //  Я добавил вызов stroke в каждой итерации чтобы добиться эффекта постепенной прорисовки
     </script>
